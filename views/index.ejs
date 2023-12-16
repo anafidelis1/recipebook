@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/index.css">
+    <script src="https://kit.fontawesome.com/ada3994e0b.js" crossorigin="anonymous"></script>
+    <title>Ana's Recipe</title>
+</head>
+<body>
+    <header class="container">
+
+        <div class="logo">
+            <a href="/">Ana's recipe</a>
+        </div>
+        <div class="actions">
+                    <a href="/newpost">New recipe</a>
+        </div>
+    </header>   
+
+    <main>
+        <div class="hero">
+            <div class="hero-title">
+                <h1>A food blog infused with culture and love</h1>
+                <div class="rectanguler"></div>
+            </div>
+        </div>
+        <div class="content">
+                <div class="content-titles">
+                    <h2>Delicious recipes</h2>
+                    <div class="rectanguler"></div>
+                </div>
+            <div class="post">
+
+                <% if (posts.length > 0) { %>
+                     <% posts.forEach(post => { %>
+                    <img src= <%= post.image %> alt="">
+                    <div class="post-content">
+                        <h1> <%= post.title %></h1>
+                        <p> <%= post.description %></p>
+                        <h3>Ingredients</h3>
+                        <p> <%= post.ingredients %></p>
+                        <h3>How to do it</h3>
+                        <p> <%= post.howTo %></p>
+                    </div>    
+                    <% }); %>   
+                <% } else { %>
+                    
+                    <div class="empty-state">
+                        <p>You haven't saved a recipe yet. How about starting now?</p>
+                    </div>
+                    
+                    
+                    
+                <%} %>
+
+               
+            </div>
+        </div>
+       
